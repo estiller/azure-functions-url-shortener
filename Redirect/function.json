@@ -5,24 +5,25 @@
       "type": "httpTrigger",
       "direction": "in",
       "name": "req",
-      "methods": ["post"],
-      "route": "register"
-    },
-    {
-      "type": "http",
-      "direction": "out",
-      "name": "res"
+      "methods": ["get"],
+      "route": "{vanity}"
     },
     {
       "type": "cosmosDB",
-      "direction": "out",
+      "direction": "in",
       "name": "registration",
       "databaseName": "registrations",
       "collectionName": "registrations",
       "createIfNotExists": "true",
       "connectionStringSetting": "RegistrationsDB",
-      "partitionKey": "/id",
-      "collectionThroughput": "400"
+      "collectionThroughput": "400",
+      "partitionKey": "{vanity}",
+      "id": "{vanity}"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
     }
   ]
 }

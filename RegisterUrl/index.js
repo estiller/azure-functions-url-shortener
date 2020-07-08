@@ -1,5 +1,5 @@
 module.exports = async function (context, req) {
-  context.log("JavaScript HTTP trigger function processed a request.");
+  context.log("Url registration triggered");
 
   if (req.body && req.body.url && req.body.vanity && req.body.submittedBy) {
     return {
@@ -12,13 +12,13 @@ module.exports = async function (context, req) {
         status: 204,
       },
     };
-  } else {
-    return {
-      res: {
-        status: 400,
-        body:
-          "Please pass a a request body containing a url, vanity url and a submitted by fields",
-      },
-    };
   }
+
+  return {
+    res: {
+      status: 400,
+      body:
+        "Please pass a a request body containing a url, vanity url and a submitted by fields",
+    },
+  };
 };

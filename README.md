@@ -1,6 +1,6 @@
 # Azure Functions URL Shortener
 
-This repo contains a very simple URL shortener implementation. It is meant to be used as a demo for authoring Azure Functions with bindings using JavaScript.
+This repo contains a very simple URL shortener implementation. It is meant to be used as a demo for authoring Azure Functions with bindings using JavaScript. Storage is implemented with Cosmos DB.
 
 ## Local Execution
 

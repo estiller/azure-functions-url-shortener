@@ -1,12 +1,11 @@
 module.exports = async function (context, req) {
   context.log("Url registration triggered");
 
-  if (req.body && req.body.url && req.body.vanity && req.body.submittedBy) {
+  if (req.body && req.body.url && req.body.vanity) {
     return {
       registration: {
         id: req.body.vanity,
         url: req.body.url,
-        submittedBy: req.body.submittedBy,
       },
       res: {
         status: 204,

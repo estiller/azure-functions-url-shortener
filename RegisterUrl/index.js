@@ -3,11 +3,11 @@ module.exports = async function (context, req) {
 
   if (req.body && req.body.url && req.body.vanity && req.body.submittedBy) {
     return {
-      registration: JSON.stringify({
+      registration: {
         id: req.body.vanity,
         url: req.body.url,
         submittedBy: req.body.submittedBy,
-      }),
+      },
       res: {
         status: 204,
       },
